@@ -1,7 +1,6 @@
 package dev.web.socket.chatroom;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.startup.ContextConfig;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
