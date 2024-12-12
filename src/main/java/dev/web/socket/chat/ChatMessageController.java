@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @Controller
-@RequiredArgsConstructor
 public class ChatMessageController {
+    public ChatMessageController(SimpMessagingTemplate messagingTemplate, ChatMessageService messageService) {
+        this.messagingTemplate = messagingTemplate;
+        this.messageService = messageService;
+    }
 
     private final SimpMessagingTemplate messagingTemplate;
     private final ChatMessageService messageService;

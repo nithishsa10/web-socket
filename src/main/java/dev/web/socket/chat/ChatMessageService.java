@@ -1,18 +1,21 @@
 package dev.web.socket.chat;
 
 import dev.web.socket.chatroom.ChatRoomService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class ChatMessageService {
 
     private final ChatMessageRepository chatMessageRepository;
     private final ChatRoomService chatRoomService;
+
+    public ChatMessageService(ChatMessageRepository chatMessageRepository, ChatRoomService chatRoomService) {
+        this.chatMessageRepository = chatMessageRepository;
+        this.chatRoomService = chatRoomService;
+    }
 
     public ChatMessage save(ChatMessage chatMessage) {
         var chatId = chatRoomService
